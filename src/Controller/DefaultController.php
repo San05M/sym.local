@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+    #[Route('/', name: 'sym_index')]
+
     public function index()
     {
         $nombre = 'María';
@@ -21,11 +24,13 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    #[Route('/uno', name: 'sym_index1')]
     public function index1()
     {
         return $this->render('prueba1.html.twig');
     }
 
+    #[Route('/dos', name: 'sym_index2')]
     public function index2()
     {
         $nombre = 'Juan';
@@ -38,4 +43,7 @@ class DefaultController extends AbstractController
             'fecha' => new \DateTime()
         ]);
     }
+    
+    #[Route('/about', name: 'sym_about')]
+    public function abaut() {}
 }

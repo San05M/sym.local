@@ -3,6 +3,14 @@
 	{{ parent() }}!! Prueba2
 {% endblock %}
 {% block body %}
+	<nav>
+		<ul>
+			<li><a href="{{path('sym_index')}}">Inicio</a></li>
+			<li><a href="{{path('sym_index1')}}">Prueba1</a></li>
+            <li><a href="{{path('sym_index2')}}">Prueba2</a></li>
+		</ul>
+	</nav>
+
 	{% if nombre is defined %}
 		<p>Hola
 			{{ nombre }}!!</p>
@@ -12,6 +20,6 @@
 	{% else %}
 		<p>Hola mundo!!</p>
 	{% endif %}
-		{% include 'parts/nombres.part.html.twig' with {'nombres':nombres} %}
+	{% include 'parts/nombres.part.html.twig' with {'nombres':nombres} %}
 
 {% endblock %}
