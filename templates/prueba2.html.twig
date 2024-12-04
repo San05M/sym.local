@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ parent() }}!! Prueba2
+{% endblock %}
+{% block body %}
+	{% if nombre is defined %}
+		<p>Hola
+			{{ nombre }}!!</p>
+		<p>{{ saludo }}!!</p>
+		<p>Hoy es
+			{{ fecha | date("d D/M/y") }}</p>
+	{% else %}
+		<p>Hola mundo!!</p>
+	{% endif %}
+		{% include 'parts/nombres.part.html.twig' with {'nombres':nombres} %}
+
+{% endblock %}
