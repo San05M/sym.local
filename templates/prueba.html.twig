@@ -3,6 +3,22 @@
 		<title>Hola Mundo</title>
 	</head>
 	<body>
-		<p>Hola mundo</p>
+		{% if nombre is defined %}
+			<p>Hola
+				{{ nombre }}!!</p>
+		{% else %}
+			<p>Hola mundo !!</p>
+		{% endif %}
+		<p>
+			Estamos probando
+		</p>
+		<p>{{ saludo }}!!</p>
+
+		<ul>
+			{% for nombre in nombres %}
+				<li>{{ nombre }}</li>
+			{% endfor %}
+		</ul>
+		<p>{{ fecha | date }}</p>
 	</body>
 </html>
