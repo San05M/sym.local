@@ -44,6 +44,6 @@ class DefaultController extends AbstractController
         ]);
     }
     
-    #[Route('/about', name: 'sym_about')]
-    public function abaut() {}
+    # #[Route('/about', name: 'sym_about')]
+   # public function abaut() {}
 }

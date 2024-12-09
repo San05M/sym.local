@@ -1,8 +1,7 @@
-<html>
-	<head>
-		<title>Hola Mundo</title>
-	</head>
-	<body>
+
+	{% extends 'base.html.twig' %}
+	
+	{% block title %}
 		{% if nombre is defined %}
 			<p>Hola
 				{{ nombre }}!!</p>
@@ -20,5 +19,4 @@
 			{% endfor %}
 		</ul>
 		<p>{{ fecha | date }}</p>
-	</body>
-</html>
+{% endblock %}
