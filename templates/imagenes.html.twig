@@ -1,17 +1,28 @@
-<table border="1">
-	<th>Nombre</th>
-	<th>Descripción</th>
-	<th>N.Likes</th>
-	<th>N.Visualizaciones</th>
-	<th>N.Descargas</th>
-	{% for imagen in imagenes %}
-		<tr>
-			<td>{{ imagen.getNombre() }}</td>
-			<td>{{ imagen.getDescripcion() }}</td>
-			<td>{{ imagen.getNumLikes() }}</td>
-			<td>{{ imagen.getNumVisualizaciones() }}</td>
-			<td>{{ imagen.getNumDownloads() }}</td>
-		</tr>
-	{% endfor %}
+{% extends 'base.html.twig' %}
 
-</table>
+{% block title %}
+
+	<h1>
+		<img src="{{ asset('images/index/gallery/1.jpg') }}" alt="Pruebas">Aplicación de ejemplo
+	</h1>
+
+	<table border="1">
+		<th>Nombre</th>
+		<th>Descripción</th>
+		<th>N.Likes</th>
+		<th>N.Visualizaciones</th>
+		<th>N.Descargas</th>
+		{% for imagen in imagenes %}
+			<tr>
+				<td>{{ imagen.getNombre() }}</td>
+				<td>{{ imagen.getDescripcion() }}</td>
+				<td>{{ imagen.getNumLikes() }}</td>
+				<td>{{ imagen.getNumVisualizaciones() }}</td>
+				<td>{{ imagen.getNumDownloads() }}</td>
+			</tr>
+		{% endfor %}
+
+	</table>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+      <!-- Clients Feedback -->
+      <div class="row feedback text-center">
+           <h3>CLIENTS FEEDBACK</h3>
+           <hr>
+            {% for imagenesCliente in imagenes %}
+
+              <div class="col-xs-12 col-sm-3">
+                <img class="img-responsive" src="{{ asset(imagenesCliente.getUrlClientes())}}" alt="client's picture">
+                <h5>{{ imagenesCliente.getDescripcion() }}</h5>
+                <q>Hola</q>
+              </div>
+
+            {% endfor %}
+        </div>
+      <!-- End of Clients Feedback --> 

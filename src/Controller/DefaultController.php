@@ -43,6 +43,12 @@ class DefaultController extends AbstractController
             'fecha' => new \DateTime()
         ]);
     }
+
+    #[Route('/images', name: 'sym_index3')]
+    public function index3()
+    {
+        return $this->render('imagenes.html.twig');
+    }
     
     # #[Route('/about', name: 'sym_about')]
    # public function abaut() {}

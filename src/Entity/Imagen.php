@@ -12,10 +12,10 @@ class Imagen implements IEntity
     private $numLikes;
     private $numDownloads;
 
-    const RUTA_IMAGENES_PORTFOLIO = '/public/images/index/portfolio/';
-    const RUTA_IMAGENES_GALERIA = '/public/images/index/gallery/';
-    const RUTA_IMAGENES_CLIENTES = '/public/images/clients/';
-    const RUTA_IMAGENES_SUBIDAS = '/public/images/galeria/';
+    const RUTA_IMAGENES_PORTFOLIO = '/images/index/portfolio/';
+    const RUTA_IMAGENES_GALERIA = '/images/index/gallery/';
+    const RUTA_IMAGENES_CLIENTES = '/images/clients/';
+    const RUTA_IMAGENES_SUBIDAS = '/images/galeria/';
 
     public function __construct(string $nombre = "", string $desc = "", int $cat = 1, int $numVis = 0, int $numLikes = 0, int $numDownloads = 0)
     {
