@@ -1,0 +1,16 @@
+<table border="1">
+        <img src="{{ imagen.getUrlSubidas() }}" alt="Imagen">
+		<th>Nombre</th>
+		<th>Descripción</th>
+		<th>N.Likes</th>
+		<th>N.Visualizaciones</th>
+		<th>N.Descargas</th>
+			<tr>
+				<td>{{ imagen.getNombre() }}</td>
+				<td>{{ imagen.getDescripcion() }}</td>
+				<td>{{ imagen.getNumLikes() }}</td>
+				<td>{{ imagen.getNumVisualizaciones() }}</td>
+				<td>{{ imagen.getNumDownloads() }}</td>
+			</tr>
+
+	</table>

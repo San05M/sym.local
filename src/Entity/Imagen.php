@@ -31,6 +31,23 @@ class Imagen
     #[ORM\Column(nullable: true)]
     private ?int $numDownloads = null;
 
+    const RUTA_IMAGENES_PORTFOLIO = '../images/index/portfolio/';
+    const RUTA_IMAGENES_GALERIA = '../images/index/gallery/';
+    const RUTA_IMAGENES_CLIENTES = '../images/clients/';
+    const RUTA_IMAGENES_SUBIDAS = '../images/galeria/';
+
+
+    public function __construct($nombre = "", $descripcion = "", $categoria = 0, $numVisualizaciones = 0, $numLikes = 0, $numDownloads = 0)
+    {
+        $this->id = null;
+        $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
+        $this->categoria = $categoria;
+        $this->numVisualizaciones = $numVisualizaciones;
+        $this->numLikes = $numLikes;
+        $this->numDownloads = $numDownloads;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,4 +124,30 @@ class Imagen
 
         return $this;
     }
+
+    function getUrlPortafolio(): ?string
+    {
+        return self::RUTA_IMAGENES_PORTFOLIO . $this->getNombre();
+    }
+
+    function getUrlGaleria(): ?string
+    {
+        return self::RUTA_IMAGENES_GALERIA . $this->getNombre();
+    }
+    function getUrlSubidas(): ?string
+    {
+        return self::RUTA_IMAGENES_SUBIDAS . $this->getNombre();
+    }
+
+    function getUrlCliente(): ?string
+    {
+        return self::RUTA_IMAGENES_CLIENTES . $this->getNombre();
+    }
+
+
+    public function __toString(): string
+    {
+        return $this->getDescripcion();
+    }
+   
 }
