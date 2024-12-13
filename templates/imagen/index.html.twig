@@ -26,7 +26,8 @@
 			<th>N.Descargas</th>
 			{% for imagen in imagenes %}
 				<tr>
-					<td>{{ imagen.getNombre() }}</td>
+					<td>
+						<a href="{{ path('sym_imagen_show', { id: imagen.getId() }) }}" data-toggle="tooltip" data-original- title="More information">🚬👽 🫴🏻🐱</a></td>
 					<td>{{ imagen.getDescripcion() }}</td>
 					<td>{{ imagen.getNumLikes() }}</td>
 					<td>{{ imagen.getNumVisualizaciones() }}</td>
