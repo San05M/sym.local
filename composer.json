@@ -19,10 +19,13 @@
         "symfony/console": "7.2.*",
         "symfony/dotenv": "7.2.*",
         "symfony/flex": "^2",
+        "symfony/form": "7.2.*",
         "symfony/framework-bundle": "7.2.*",
         "symfony/maker-bundle": "*",
         "symfony/runtime": "7.2.*",
+        "symfony/security-csrf": "7.2.*",
         "symfony/twig-bundle": "7.2.*",
+        "symfony/validator": "7.2.*",
         "symfony/yaml": "7.2.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"

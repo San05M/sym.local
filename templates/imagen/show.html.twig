@@ -1,37 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Galeria!
-{% endblock %}
+{% block title %}Imagen{% endblock %}
 
 {% block principal %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-	<div class="example-wrapper">
-		<table border="1">
-			<img src="{{ imagen.getUrlSubidas() }}" alt="Imagen">
-			<th>Nombre</th>
-			<th>Descripción</th>
-			<th>N.Likes</th>
-			<th>N.Visualizaciones</th>
-			<th>N.Descargas</th>
-			<tr>
-				<td>{{ imagen.getNombre() }}</td>
-				<td>{{ imagen.getDescripcion() }}</td>
-				<td>{{ imagen.getNumLikes() }}</td>
-				<td>{{ imagen.getNumVisualizaciones() }}</td>
-				<td>{{ imagen.getNumDownloads() }}</td>
-			</tr>
+    <h1>Imagen</h1>
 
-		</table>
-	</div>
+    <table class="table">
+        <tbody>
+         <tr>
+                <th>Imagen</th>
+                <td><img src="{{ imagen.getUrlSubidas }}" alt="Imagen" style="max-width: 100px;"></td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ imagen.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ imagen.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ imagen.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Categoria</th>
+                <td>{{ imagen.categoria }}</td>
+            </tr>
+            <tr>
+                <th>NumVisualizaciones</th>
+                <td>{{ imagen.numVisualizaciones }}</td>
+            </tr>
+            <tr>
+                <th>NumLikes</th>
+                <td>{{ imagen.numLikes }}</td>
+            </tr>
+            <tr>
+                <th>NumDownloads</th>
+                <td>{{ imagen.numDownloads }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_imagen_index') }}">back to list</a>
+
+    <a href="{{ path('app_imagen_edit', {'id': imagen.id}) }}">edit</a>
+
+    {{ include('imagen/_delete_form.html.twig') }}
 {% endblock %}
