@@ -23,7 +23,7 @@
         {% for imagen in imagens %}
             <tr>
                 <td>{{ imagen.id }}</td>
-                <td><img src="{{ imagen.getUrlSubidas }}" alt="Imagen" style="max-width: 25px;"></td>
+                <td><img src="{{ imagen.getUrlSubidas }}" alt="Imagen" style="max-width: 50px;"></td>
                 <td>{{ imagen.nombre }}</td>
                 <td>{{ imagen.descripcion }}</td>
                 <td>{{ imagen.categoria }}</td>
@@ -31,8 +31,8 @@
                 <td>{{ imagen.numLikes }}</td>
                 <td>{{ imagen.numDownloads }}</td>
                 <td>
-                    <a href="{{ path('app_imagen_show', {'id': imagen.id}) }}">show</a>
-                    <a href="{{ path('app_imagen_edit', {'id': imagen.id}) }}">edit</a>
+                    <button class="btn"><a href="{{ path('app_imagen_show', {'id': imagen.id}) }}">Ver</a></button>
+                    <button class="btn"><a href="{{ path('app_imagen_edit', {'id': imagen.id}) }}">Editar</a></button>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_imagen_new') }}">Create new</a>
+    <button class="btn"><a href="{{ path('app_imagen_new') }}">Crear Nuevo</a></button>
 {% endblock %}
