@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Asociados index{% endblock %}
+
+{% block body %}
+    <h1>Asociados index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Logo</th>
+                <th>Descripcion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asociado in asociados %}
+            <tr>
+                <td>{{ asociado.id }}</td>
+                <td>{{ asociado.nombre }}</td>
+                <td>{{ asociado.logo }}</td>
+                <td>{{ asociado.descripcion }}</td>
+                <td>
+                    <a href="{{ path('app_asociados_show', {'id': asociado.id}) }}">show</a>
+                    <a href="{{ path('app_asociados_edit', {'id': asociado.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_asociados_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Asociados{% endblock %}
+
+{% block body %}
+    <h1>Asociados</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ asociado.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ asociado.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ asociado.logo }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ asociado.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_asociados_index') }}">back to list</a>
+
+    <a href="{{ path('app_asociados_edit', {'id': asociado.id}) }}">edit</a>
+
+    {{ include('asociados/_delete_form.html.twig') }}
+{% endblock %}

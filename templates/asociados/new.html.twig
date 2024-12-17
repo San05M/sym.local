@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Asociados{% endblock %}
+
+{% block body %}
+    <h1>Create new Asociados</h1>
+
+    {{ include('asociados/_form.html.twig') }}
+
+    <a href="{{ path('app_asociados_index') }}">back to list</a>
+{% endblock %}
