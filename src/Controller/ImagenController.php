@@ -30,6 +30,16 @@ final class ImagenController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // $file almacena el archivo subido
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $form['nombre']->getData();
+            // Generamos un nombre único
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            // Move the file to the directory where brochures are stored
+            $file->move($this->getParameter('images_directory_subidas'), $fileName);
+            // Actualizamos el nombre del archivo en el objeto imagen al nuevo generado
+            $imagen->setNombre($fileName);
             $entityManager->persist($imagen);
             $entityManager->flush();
 
@@ -57,6 +67,16 @@ final class ImagenController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // $file almacena el archivo subido
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $form['nombre']->getData();
+            // Generamos un nombre único
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            // Move the file to the directory where brochures are stored
+            $file->move($this->getParameter('images_directory_subidas'), $fileName);
+            // Actualizamos el nombre del archivo en el objeto imagen al nuevo generado
+            $imagen->setNombre($fileName);
+            
             $entityManager->flush();
 
             return $this->redirectToRoute('app_imagen_index', [], Response::HTTP_SEE_OTHER);
