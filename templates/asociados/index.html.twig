@@ -25,6 +25,7 @@
                 <td>
                     <a href="{{ path('app_asociados_show', {'id': asociado.id}) }}">show</a>
                     <a href="{{ path('app_asociados_edit', {'id': asociado.id}) }}">edit</a>
+                    <a href="{{ path('app_imagen_delete_json', {'id': imagen.id}) }}" class="delete">borrar</a>
                 </td>
             </tr>
         {% else %}

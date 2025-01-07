@@ -38,6 +38,9 @@
 						<button class="btn">
 							<a href="{{ path('app_imagen_edit', {'id': imagen.id}) }}">Editar</a>
 						</button>
+						<button>
+						<a href="{{ path('app_imagen_delete_json', {'id': imagen.id}) }}" class="delete">borrar</a>
+						</button>
 					</td>
 				</tr>
 			{% else %}
