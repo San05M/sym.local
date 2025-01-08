@@ -51,7 +51,7 @@
 										Blog</a>
 								</li>
 
-								{% if app.request.pathinfo=='/contact' or app.request.pathinfo=='/contact' %}
+								{% if app.request.pathinfo=='/contact'%}
 									<li class="active lien">
 									{% else %}
 										<li class="lien">
@@ -61,14 +61,12 @@
 											Contact</a>
 									</li>
 
-									{% if app.request.pathinfo=='/index' or app.request.pathinfo=='/galeria' %}
+									{% if app.request.pathinfo=='/imagen' %}
 										<li class="active lien">
 										{% else %}
 											<li class="lien">
 											{% endif %}
-											<a href={{ path('sym_index') }}>
-												<i class="fa fa-file-text sr-icons"></i>
-												Galeria</a>
+											<a href={{ path('app_imagen_index') }}><i class="fa fa-file-text sr-icons"></i> Galería</a>
 										</li>
 										{% if app.request.pathinfo=='/index' or app.request.pathinfo=='/register' %}
 											<li class="active lien">
